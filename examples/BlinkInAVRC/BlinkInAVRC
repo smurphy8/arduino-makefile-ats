@@ -1,0 +1,11 @@
+  /home/scott/programs/ats/arduino-makefile-ats/examples/BlinkInAVRC:
+  total used in directory 36 available 562508568
+  drwxr-xr-x  6 scott scott 4096 Oct  8 17:48 .
+  drwxr-xr-x 23 scott scott 4096 Oct  8 17:26 ..
+  drwxr-xr-x  4 scott scott 4096 Oct  8 17:34 avr_prelude
+  -rw-r--r--  1 scott scott  571 Oct  8 17:43 blink.c
+  drwxr-xr-x  2 scott scott 4096 Oct  8 17:32 build-circuitplay32u4cat
+  drwxr-xr-x  2 scott scott 4096 Oct  8 17:48 DATS
+C -rw-r--r--  1 scott scott  412 Oct  8 17:33 blink.dats
+  -rw-r--r--  1 scott scott 1435 Oct  8 17:47 Makefile
+  drwxr-xr-x  2 scott scott 4096 Oct  8 17:35 SATS
