@@ -1,1 +1,1 @@
-fun loop():void = "ext#loop_in_c()"
+fun loop():void = "ext#loop_in_c"

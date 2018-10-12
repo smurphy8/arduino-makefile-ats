@@ -34,16 +34,12 @@ OBJCOPY        = avr-objcopy
 OBJDUMP        = avr-objdump
 LOCAL_C_SRCS   = $(DATSC)
 
-
-
-
-$(DATSC):%_dats.c:%.dats 
+$(DATSC) : %_dats.c:%.dats
 	$(ATS) -o $@.tmp -d $<
 	mv $@.tmp $@
 
-echovars:
-	echo $(DATS)
-	echo $(DATSC)
+
+allats:$(DATSC)
 
 #
 RMF=rm -f
@@ -55,7 +51,7 @@ cleanats:: ; $(RMF) DATS/*_?ats.c.tmp
 cleanats:: ; $(RMF) DATS/*_?ats.c
 
 # Rest of AVR Code
-# -include ../../Arduino.mk
+-include ../../Arduino.mk
 
 # !!! Important. You have to use make ispload to upload when using ISP programmer
 

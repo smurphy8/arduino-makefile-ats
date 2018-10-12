@@ -17,11 +17,11 @@ loop_in_c () {
  while (1) {
      PORTC = 0xFF;
      
-     _delay_ms(3);
+     _delay_ms(300);
      
      PORTC = 0x00;
 
-     _delay_ms(3);
+     _delay_ms(300);
 
  }; 
 
