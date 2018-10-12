@@ -1,7 +1,6 @@
 # This sample Makefile, explains how you can compile plain AVR C file.
 #
 # Arduino Make file. Refer to https://github.com/sudar/Arduino-Makefile
-# Run make once to generate C File specified by PRG
 # Run again to compile the generated c file
 NO_CORE = Yes
 
@@ -39,8 +38,22 @@ $(DATSC): %_dats.c: %.dats $(SATS)
 	$(ATS) -o $@.tmp -d $<
 	mv $@.tmp $@
 
+
+echovars:
+	echo $(DATS)
+	echo $(DATSC)
+
+#
+RMF=rm -f
+#clean ats deps
+cleanats:: ; $(RMF) *~
+cleanats:: ; $(RMF) DATS/*_?ats.o
+cleanats:: ; $(RMF) DATS/*_?ats.o
+cleanats:: ; $(RMF) DATS/*_?ats.c.tmp
+cleanats:: ; $(RMF) DATS/*_?ats.c
+
 # Rest of AVR Code
--include ../../Arduino.mk
+# -include ../../Arduino.mk
 
 # !!! Important. You have to use make ispload to upload when using ISP programmer
 

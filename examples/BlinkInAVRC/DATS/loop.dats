@@ -1,13 +1,3 @@
-staload "SATS/circuit_lab.sats"
-
-
-
-implement loop (f) = f(500)
-
-
-
-
-
 
 //--------------------------------------------------
 // myLoop implementation 
@@ -23,15 +13,15 @@ implement loop (f) = f(500)
 
 
 void
-loop_in_c (int x) { 
+loop_in_c () { 
  while (1) {
      PORTC = 0xFF;
      
-     _delay_ms(x);
+     _delay_ms(3);
      
      PORTC = 0x00;
 
-     _delay_ms(x);
+     _delay_ms(3);
 
  }; 
 
