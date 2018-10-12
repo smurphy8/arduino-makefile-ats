@@ -1,7 +1,8 @@
 # This sample Makefile, explains how you can compile plain AVR C file.
 #
 # Arduino Make file. Refer to https://github.com/sudar/Arduino-Makefile
-
+# Run make once to generate C File specified by PRG
+# Run again to compile the generated c file
 NO_CORE = Yes
 
 BOARD_TAG    =circuitplay32u4cat
@@ -18,9 +19,8 @@ ARD_RESET_OPTS = --caterina
 SATS           = $(wildcard SATS/*.sats)
 DATS           = $(wildcard DATS/*.dats)
 DATSC          = $(patsubst %.dats,%_dats.c,$(DATS))
+DATSCROOT      = $(patsubst DATS/%,./%,$(DATSC))
 DATSOBJ        = $(patsubst %.dats,%_dats.o,$(DATS))
-PRG           = blink.dats
-PRGC          = $(patsubst %.dats,%_dats.c,$(PRG)) 
 ATS = patsopt
 PATSHOME =      /home/scott/toolchains/ats/ATS2-Postiats-0.3.11
 
@@ -32,12 +32,15 @@ ATSCFLAGS      += -I. -I${PATSHOME} -I${PATSHOME}/ccomp/runtime
 
 OBJCOPY        = avr-objcopy
 OBJDUMP        = avr-objdump
+LOCAL_C_SRCS   = $(DATSC)
 
 # dependencies#
-
+$(DATSC): %_dats.c: %.dats $(SATS)
+	$(ATS) -o $@.tmp -d $<
+	mv $@.tmp $@
 
 # Rest of AVR Code
-include ../../Arduino.mk
+-include ../../Arduino.mk
 
 # !!! Important. You have to use make ispload to upload when using ISP programmer
 
