@@ -18,6 +18,7 @@ ARD_RESET_OPTS = --caterina
 SATS           = $(wildcard SATS/*.sats)
 DATS           = $(wildcard DATS/*.dats)
 DATSC          = $(patsubst %.dats,%_dats.c,$(DATS))
+
 DATSCROOT      = $(patsubst DATS/%,./%,$(DATSC))
 DATSOBJ        = $(patsubst %.dats,%_dats.o,$(DATS))
 ATS = patsopt
@@ -33,11 +34,12 @@ OBJCOPY        = avr-objcopy
 OBJDUMP        = avr-objdump
 LOCAL_C_SRCS   = $(DATSC)
 
-# dependencies#
-$(DATSC): %_dats.c: %.dats $(SATS)
+
+
+
+$(DATSC):%_dats.c:%.dats 
 	$(ATS) -o $@.tmp -d $<
 	mv $@.tmp $@
-
 
 echovars:
 	echo $(DATS)
