@@ -1,0 +1,1 @@
+fun delay_one_ms() = "ext#delay_one_ms_in_c"

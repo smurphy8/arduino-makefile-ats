@@ -57,7 +57,8 @@
 #
 # On Linux, you might prefer:
 #
-   ARDUINO_DIR   = /usr/share/arduino
+    ARDUINO_DIR   = /home/scott/toolchains/arduino-1.8.7
+#   ARDUINO_DIR   = /usr/share/arduino
 #   ARDMK_DIR     = /usr/share/arduino
 #   AVR_TOOLS_DIR = /usr
 #
@@ -844,7 +845,7 @@ LOCAL_INO_SRCS  ?= $(wildcard *.ino)
 LOCAL_AS_SRCS   ?= $(wildcard *.S)
 LOCAL_SRCS      = $(LOCAL_C_SRCS)   $(LOCAL_CPP_SRCS) \
 		$(LOCAL_CC_SRCS)   $(LOCAL_PDE_SRCS) \
-		$(LOCAL_INO_SRCS) $(LOCAL_AS_SRCS)
+		$(LOCAL_INO_SRCS) $(LOCAL_AS_SRCS) 
 LOCAL_OBJ_FILES = $(LOCAL_C_SRCS:.c=.c.o)   $(LOCAL_CPP_SRCS:.cpp=.cpp.o) \
 		$(LOCAL_CC_SRCS:.cc=.cc.o)   $(LOCAL_PDE_SRCS:.pde=.pde.o) \
 		$(LOCAL_INO_SRCS:.ino=.ino.o) $(LOCAL_AS_SRCS:.S=.S.o)
