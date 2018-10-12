@@ -9,4 +9,4 @@ staload "SATS/loop.sats"
 
 
 implement
-main0 () = loop() 
+main0 () = atsLoop(5000)
