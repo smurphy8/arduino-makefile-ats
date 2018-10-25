@@ -1,0 +1,11 @@
+* ATS Specific Makefile for Arduino 
+This work is based off the Makefile for Arduino project.
+
+But customized to use ATS 
+
+
+* AVR Documentation
++  [[https://www.nongnu.org/avr-libc/user-manual/modules.html][AVR Library Documentation]]
++ [[http://ww1.microchip.com/downloads/en/devicedoc/atmel-7766-8-bit-avr-atmega16u4-32u4_datasheet.pdf][AVR 32Uf ]]
++ [[https://learn.adafruit.com/introducing-circuit-playground?view=all][Circuit Playground]]
+

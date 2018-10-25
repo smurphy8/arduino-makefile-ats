@@ -1,5 +1,3 @@
-
-
 #include "avr_prelude/kernel_staload.hats"
 
 staload "SATS/loop.sats"
