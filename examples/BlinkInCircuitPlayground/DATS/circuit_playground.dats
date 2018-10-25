@@ -1,24 +1,11 @@
 #include "avr_prelude/kernel_staload.hats"
 
-
-datatype port = 
-  | PORTB of () 
-  | PORTC of ()
-  | PORTD of ()
-  | PORTE of ()
-  | PORTF of ()
+staload "SATS/circuit_playground.sats"
 
 
 
 
-#define PINMAX 7
 
-typedef 
-pin = [i:int | i < PINMAX] int (i)
-
-
-
-  
 
 
 local

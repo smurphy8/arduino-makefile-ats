@@ -11,4 +11,4 @@ datatype port =
 typedef pin = [i:int | i < PINMAX] int (i)
 
 
-fun setPinHigh (port:port,pin:pin) : void
+val setPinHigh (port:port,pin:pin) : void
