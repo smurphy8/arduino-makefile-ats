@@ -6,9 +6,12 @@ datatype port =
   | PORTF of ()
 
 
-#define PINMAX 7
+#define PINMAX 15
 
-typedef pin = [i:int | i < PINMAX] int (i)
+typedef pin = [i:int | i <= PINMAX] int (i)
+
+fun setPinHigh (port:port,pin:pin) : void 
+
+fun setPinHighVal(port:int, pin:int):void = "ext#setPinHigh_in_c"
 
 
-val setPinHigh (port:port,pin:pin) : void

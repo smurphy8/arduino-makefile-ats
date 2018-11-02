@@ -3,12 +3,12 @@
 
 void
 port_on_in_c () {
-PORTC = 0xFF;
+  PORTC = 0xFF;
 };
 
 void
 port_off_in_c () {
-PORTC = 0x00;
+  PORTC = 0x00;
 };
 
 void
@@ -19,10 +19,11 @@ delay_one_ms_in_c () {
 void
 delay_in_c (int x) { 
   if(x > 0) {
-   for(x;x > 0 ; --x) {
+    for(x;x > 0 ; --x) {
       _delay_ms(1);
-   };
+    };
   };
 };
+
 
 

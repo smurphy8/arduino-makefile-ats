@@ -3,27 +3,20 @@
 staload "SATS/circuit_playground.sats"
 
 
-
-
-
-
-
-local
-extern
-fun example():void = "ext#port_on_in_c"
-
-extern
-fun setPinHigh(port:int, pin:int):void = "ext#setPinHigh_in_c"
-
-
-val setPinHighInternal = lam(port:port, pin:pin) : void => case port of
-  | PORTB () => setPinHigh (0 , pin)   
-  | PORTC () => setPinHigh (1 , pin) 
-  | PORTD () => setPinHigh (2 , pin) 
-  | PORTE () => setPinHigh (3 , pin) 
-  | PORTF () => setPinHigh (4 , pin) 
+implement
+setPinHigh (port:port, pin:pin) = let
+   
   
+  val setPinHighInternal = lam(port:port, pin:pin) : void => case port of
+    | PORTB () => setPinHighVal (0 , pin)
+    | PORTC () => setPinHighVal (1 , pin)
+    | PORTD () => setPinHighVal (2 , pin)
+    | PORTE () => setPinHighVal (3 , pin)
+    | PORTF () => setPinHighVal (4 , pin)
+    
+  
+in
+  setPinHighInternal(port,pin)
 
-in 
-val setPinHigh = lam(port:port,pin:pin) : void => setPinHighInternal(port,pin)
 end
+
