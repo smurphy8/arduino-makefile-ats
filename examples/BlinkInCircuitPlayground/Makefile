@@ -23,7 +23,7 @@ DATSCROOT      = $(patsubst DATS/%,./%,$(DATSC))
 DATSOBJ        = $(patsubst %.dats,%_dats.o,$(DATS))
 ATS = patsopt
 PATSHOME =      /home/scott/toolchains/ats/ATS2-Postiats-0.3.11
-ATSCFLAGS      = -std=c99 -D_XOPEN_SOURCE
+ATSCFLAGS      = -std=gnu99 -D_XOPEN_SOURCE
 ATSCFLAGS      += -D_ATSTYPE_VAR_SIZE_=0X000F -D_ATS_CCOMP_EXCEPTION_NONE_ -D_ATS_CCOMP_RUNTIME_NONE_ -D_ATS_CCOMP_PRELUDE_NONE_
 ATSCFLAGS      += -D_ATS_CCOMP_PRELUDE_USER_=\"./avr_prelude/kernel_prelude.cats\"
 ATSCFLAGS      += -Wno-unused-variable -Wno-unused-label -Wno-unused-but-set-variable
