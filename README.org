@@ -14,3 +14,19 @@ But customized to use ATS
 + [[https://www.seeedstudio.com/document/pdf/WS2812B%20Datasheet.pdf][WS2812B LED]]
 
                                                     .
+
+* LED Characteristic Parameter
+
+| Color | Model   | Wavelength |       MCD |       V |
+|-------+---------+------------+-----------+---------|
+| Red   | 13CBAUP |    620-630 |   550-700 | 1.8-2.2 |
+| Green | 13CGAUP |    515-530 | 1100-1400 | 3.0-3.2 |
+| Blue  | 10R1MUX |    465-475 |   200-400 | 3.0-3.4 |
+
+* Data Transfer Time
+
+| T0H | 0 code, high voltage time | 0.35us    | +/- 150ns |
+| T1H | 1 code, high voltage time | 0.9us     | +/- 150ns |
+| T0L | 0 code, low voltage time  | 0.9us     | +/- 150ns |
+| T1L | 1 code, low voltage time  | 0.35us    | +/- 150ns |
+| RES | low voltage time          | abov 50us |           |
