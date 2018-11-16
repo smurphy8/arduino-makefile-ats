@@ -7,6 +7,10 @@ But customized to use ATS
 * AVR Documentation
 + [[https://www.nongnu.org/avr-libc/user-manual/modules.html][AVR Library Documentation]]
 + [[http://ww1.microchip.com/downloads/en/devicedoc/atmel-7766-8-bit-avr-atmega16u4-32u4_datasheet.pdf][AVR 32Uf ]]
++ [[https://www.microchip.com/webdoc/avrassembler/avrassembler.wb_instruction_list.html][AVR assembly]]
 + [[https://learn.adafruit.com/introducing-circuit-playground?view=all][Circuit Playground]]
++ [[https://gcc.gnu.org/onlinedocs/gcc/Extended-Asm.html][Gnu Assembly]]
 * Other Chips
 + [[https://www.seeedstudio.com/document/pdf/WS2812B%20Datasheet.pdf][WS2812B LED]]
+
+                                                    .

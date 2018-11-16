@@ -108,10 +108,4 @@ void adafruit_neopixel_in_c();
 
 
 extern
-void adafruit_cplay_neopixel (
-                         uint16_t numBytes
-                         , volatile uint8_t *port
-                         , boolean is800KHz
-                         , uint8_t pinMask
-                         , uint8_t *pixels
-                              );
+void adafruit_cplay_neopixel ();

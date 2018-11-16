@@ -2,8 +2,8 @@
 
 staload "SATS/loop.sats"
 staload "SATS/circuit_playground.sats"
-
+staload "SATS/neopixel.sats"
 
 
 implement
-main0 () = atsLoop(250)
+main0 () = adafruit_neopixel() // atsLoop(250)
