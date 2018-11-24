@@ -15,3 +15,16 @@ in
   setPinHighInternal(port,pin)
 end
 
+
+implement
+setPinLow (port:port, pin:pin) = let      
+  val setPinLowInternal = lam(port:port, pin:pin) : void => case port of
+    | PORTB () => setPinLowVal (0 , pin)
+    | PORTC () => setPinLowVal (1 , pin)
+    | PORTD () => setPinLowVal (2 , pin)
+    | PORTE () => setPinLowVal (3 , pin)
+    | PORTF () => setPinLowVal (4 , pin)      
+in
+  setPinLowInternal(port,pin)
+end
+

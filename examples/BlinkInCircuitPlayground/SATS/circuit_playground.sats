@@ -11,7 +11,11 @@ datatype port =
 typedef pin = [i:int | i <= PINMAX] int (i)
 
 fun setPinHigh (port:port,pin:pin) : void 
+fun setPinLow (port:port,pin:pin) : void 
 
 fun setPinHighVal(port:int, pin:int):void = "ext#setPinHigh_in_c"
+
+
+fun setPinLowVal(port:int, pin:int):void = "ext#setPinLow_in_c"
 
 
