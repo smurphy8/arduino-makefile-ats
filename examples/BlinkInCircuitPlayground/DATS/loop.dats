@@ -3,9 +3,15 @@ staload "SATS/delay.sats"
 staload "SATS/circuit_playground.sats"
 staload "SATS/neopixel.sats"
 
+
+fun runDDRC():[l:addr] (int@l|void) = let 
+  val (pf|rslt) = ddrc()
+  val () = !rslt := 0xFF
+in (pf|()) end 
+
 implement
 atsLoop(x:int) = {
-  fun go() = {
+  fun go() = {      
       val () = adafruit_neopixel() 
       val () = setPinHigh(PORTC, 7)
       val () = delay (x)
@@ -14,7 +20,9 @@ atsLoop(x:int) = {
       val () = delay (x)
       val () = go ()
   }
+  val (_|_) = runDDRC()
   val () = go ()
+
 }
 
 
