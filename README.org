@@ -14,7 +14,7 @@ But customized to use ATS
 + [[https://www.seeedstudio.com/document/pdf/WS2812B%20Datasheet.pdf][WS2812B LED]]
 
                                                     .
-
+                                                    
 * LED Characteristic Parameter
 
 | Color | Model   | Wavelength |       MCD |       V |

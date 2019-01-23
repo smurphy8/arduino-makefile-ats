@@ -19,3 +19,4 @@ fun setPinHighVal(port:int, pin:int):void = "ext#setPinHigh_in_c"
 fun setPinLowVal(port:int, pin:int):void = "ext#setPinLow_in_c"
 
 
+fun ddrb():[l:addr] (uint8 @ l|ptr l)  = "mac#DDRB"
