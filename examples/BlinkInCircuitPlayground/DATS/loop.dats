@@ -7,10 +7,10 @@ implement
 atsLoop(x:int) = {
   fun go() = {
       val () = adafruit_neopixel() 
-//      val () = setPinHigh(PORTC, 7)
-//      val () = delay (x)
-//      val () = setPinLow(PORTC, 7)
-//      val () = portOff ()         
+      val () = setPinHigh(PORTC, 7)
+      val () = delay (x)
+      val () = setPinLow(PORTC, 7)
+      val () = portOff ()         
       val () = delay (x)
       val () = go ()
   }
