@@ -28,3 +28,14 @@ in
   setPinLowInternal(port,pin)
 end
 
+
+
+implement
+setDDR_Bit_High 
+   {i:int} 
+   {l:addr} ( pf:ddr@ l | x:int, ddr_ptr: ptr l): 
+   (is_writeable(ddr @ l,i) | ptr l) = let 
+//  val rslt = !ddr_ptr
+  val () = !ddr_ptr := cast_int2_uint8(0xFF) //setBitN(x,rslt)
+  in (Writeable(pf)|ddr_ptr)
+  end
