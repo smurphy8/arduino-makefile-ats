@@ -20,4 +20,6 @@ fun setPinLowVal(port:int, pin:int):void = "ext#setPinLow_in_c"
 
 
 // fun ddrb():[l:addr] (uint8 @ l|ptr l)  = "ext#DDRB"
-fun ddrc():[l:addr] (int @l |ptr l)  = "ext#DDRC_in_c"
+fun ddrc():[l:addr] (uint8 @l |ptr l)  = "ext#getDDRC_in_c"
+
+fun cast_int2_uint8(i:int):uint8 = "ext#cast_int2uint8_t"

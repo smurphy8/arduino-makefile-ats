@@ -4,9 +4,9 @@ staload "SATS/circuit_playground.sats"
 staload "SATS/neopixel.sats"
 
 
-fun runDDRC():[l:addr] (int@l|void) = let 
+fun runDDRC():[l:addr] (uint8@l|void) = let 
   val (pf|rslt) = ddrc()
-  val () = !rslt := 0xFF
+  val () = !rslt :=  cast_int2_uint8(0xFF)
 in (pf|()) end 
 
 implement
