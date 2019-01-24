@@ -6,13 +6,20 @@ datatype port =
   | PORTF of ()
 
 
-#define PINMAX 15
+#define PINMAX 8
 
 typedef pin = [i:int | i <= PINMAX] int (i)
 
 typedef ddr = uint8 
 
-fun setPinHigh (port:port,pin:pin) : void 
+(* Time to define some fun stuff *)
+dataview is_writeable (v:view+,i:int) = 
+  | Writeable(v,i) of (v)
+
+
+fun setPinHigh  (port:port,pin:pin) : void 
+// fun setPinHighWithProof {l:addr} {i:int}  (is_writeable(ddr@ l,i) | ptr l, port:port,pin:pin) : void 
+
 fun setPinLow (port:port,pin:pin) : void 
 
 fun setPinHighVal(port:int, pin:int):void = "ext#setPinHigh_in_c"
@@ -26,11 +33,8 @@ fun ddrc():[l:addr] (ddr @l |ptr l)  = "ext#getDDRC_in_c"
 
 fun cast_int2_uint8(i:int):uint8 = "ext#cast_int2uint8_t_in_c"
 
-fun setBitN(i:uint8, n:uint8):ddr = "ext#setBitN_in_c"
+fun setBitN(i:int, n:uint8):ddr = "ext#setBitN_in_c"
 
-(* Time to define some fun stuff *)
-dataview is_writeable (v:view+, i:int) = 
-  | Writeable(v,i) of (v)
 
 
 
