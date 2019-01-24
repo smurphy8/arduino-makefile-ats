@@ -20,7 +20,7 @@ end
 
 implement
 setPinHighWithProof {l:addr} {i:int} (pf:is_writeable(ddr@ l,i) | ddr_ptr:ptr l, port:port, pin:pin):
-  (is_writeable(ddr@ l,i) | void) =  let
+  (is_writeable(ddr@ l,i) | void) = let
    val setPinHighInternal = lam(port:port, pin:pin) : void => case port of 
     | PORTB () => setPinHighVal (0 , pin)
     | PORTC () => setPinHighVal (1 , pin)
