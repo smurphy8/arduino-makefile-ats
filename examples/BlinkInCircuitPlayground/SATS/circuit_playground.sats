@@ -18,7 +18,7 @@ dataview is_writeable (v:view+,i:int) =
 
 
 fun setPinHigh  (port:port,pin:pin) : void 
-// fun setPinHighWithProof {l:addr} {i:int}  (is_writeable(ddr@ l,i) | ptr l, port:port,pin:pin) : void 
+fun setPinHighWithProof {l:addr} {i:int}  (pf:is_writeable(ddr@ l,i) | ddr_ptr:ptr l, port:port,pin:pin) : (is_writeable(ddr@ l,i)|void)
 
 fun setPinLow (port:port,pin:pin) : void 
 
