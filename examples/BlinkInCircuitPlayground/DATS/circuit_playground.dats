@@ -79,4 +79,4 @@ setDDR_Bit_High
   val rsltNew = setBitN(x,rslt)
   val () = !ddr_ptr := rsltNew
   in (Writeable(pf)|ddr_ptr)
-  endx
+  end
