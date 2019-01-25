@@ -77,6 +77,6 @@ setDDR_Bit_High
    (is_writeable(ddr @ l,i) | ptr l) = let 
   val rslt = !ddr_ptr
   val rsltNew = setBitN(x,rslt)
-  val () = !ddr_ptr := cast_int2_uint8(0xFF) //setBitN(x,rslt)
+  val () = !ddr_ptr := rsltNew
   in (Writeable(pf)|ddr_ptr)
   end
