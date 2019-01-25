@@ -73,7 +73,7 @@ implement
 setDDR_Bit_High 
    {i:int} 
    {l:addr}
-   ( pf:ddr@ l | x:int, ddr_ptr: ptr l): 
+   ( pf:ddr@ l | x:int(i), ddr_ptr: ptr l): 
    (is_writeable(ddr @ l,i) | ptr l) = let 
   val rslt = !ddr_ptr
   val rsltNew = setBitN(x,rslt)

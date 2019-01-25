@@ -33,6 +33,9 @@ fun setPinHighVal(port:int, pin:int):void = "ext#setPinHigh_in_c"
 fun setPinLowVal(port:int, pin:int):void = "ext#setPinLow_in_c"
 
 
+
+
+
 // fun ddrb():[l:addr] (uint8 @ l|ptr l)  = "ext#DDRB"
 fun ddrc():[l:addr] (ddr @l |ptr l)  = "ext#getDDRC_in_c"
 
@@ -45,7 +48,7 @@ fun setBitN(i:int, n:uint8):ddr = "ext#setBitN_in_c"
 
 fun setDDR_Bit_High 
    {i:int} 
-   {l:addr} ( pf:ddr@ l | x:int,ddr_ptr: ptr l): 
+   {l:addr} ( pf:ddr@ l | x:int(i) , ddr_ptr: ptr l): 
    (is_writeable(ddr @ l,i) | ptr l)
    
    
