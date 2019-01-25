@@ -15,11 +15,11 @@ implement
 atsLoop(x:int) = {
   
   fun go() = {      
-//      val (pf_write|ddr_ptr) = runDDRC()      
+      val (pf_write|ddr_ptr) = runDDRC()      
       val () = adafruit_neopixel() 
-      val () = setPinHigh(PORTC, 7)
+      val (pf|_) = setPinHighWithProof(pf_write|ddr_ptr,PORTC, 7)
       val () = delay (x)
-      val () = setPinLow(PORTC, 7)
+      val (_|_) = setPinLowWithProof(pf|ddr_ptr,PORTC, 7)
       val () = portOff ()         
       val () = delay (x)
       val () = go ()
