@@ -5,8 +5,8 @@ staload "SATS/neopixel.sats"
 
 
 fun runDDRC():
-  [l:addr] [i:int]
-  (is_writeable(ddr@ l, i) | ptr l) = let
+  [l:addr] 
+  (is_writeable(ddr@ l, 7) | ptr l) = let
   val (pf_ddr|ddr_ptr) = ddrc()
   val (pf_writeable|ddr_ptr2) = setDDR_Bit_High(pf_ddr|7,ddr_ptr)
 in (pf_writeable| ddr_ptr2) end
@@ -14,7 +14,8 @@ in (pf_writeable| ddr_ptr2) end
 implement
 atsLoop(x:int) = {
   
-  fun go() = {            
+  fun go() = {      
+//      val (pf_write|ddr_ptr) = runDDRC()      
       val () = adafruit_neopixel() 
       val () = setPinHigh(PORTC, 7)
       val () = delay (x)
